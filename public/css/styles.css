@@ -1,7 +1,7 @@
 body {
     color: #333333;
     font-family: arial;
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
     padding: 0 16px;
 
@@ -21,17 +21,19 @@ h1 {
 
 input {
     border: 1px solid #cccccc;
+    font-size: 14pt;
     padding: 8px;
-    width: 250px;
+    width: 270px;
 }
 
 button {
     cursor: pointer;
     border: 1px solid #888888;
+    font-size: 14pt;
     background: #888888;
     color: #ffffff;
     padding: 8px;
-    width: 268px;
+    width: 288px;
     margin-top:5px;    
 }
 
@@ -42,7 +44,7 @@ footer {
 }
 
 p {
-    font-size: 10pt
+    font-size: 14pt
 }
 
 .green {
@@ -65,7 +67,7 @@ p {
    margin-top: 16px; 
 }
 
-#resultGrid { width:250px}
+#resultGrid { width:285px}
 
 #resultGrid td:nth-child(1) {  
     width: 40px;
@@ -80,5 +82,5 @@ p {
 }
 
 #resultGrid tbody td {
-    font-size: 10pt;
+    font-size: 14pt;
 }
