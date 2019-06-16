@@ -24,7 +24,7 @@ app.get('', (req, res) => {
 app.get('/arrival', (req, res) => {
     if (!req.query.buscode){
         return res.send({
-            error: 'You must provide bust stop code'
+            error: 'You must provide bus stop code'
         })
     }
     
