@@ -1,8 +1,12 @@
+var processing = false;
 $(() => {
     onload();
 
     $("form").submit((e) => {
         e.preventDefault();
+        if (processing) return false;
+
+        processing = true;
         onload();
         
         const busCode = $('input').val();
@@ -36,6 +40,7 @@ $(() => {
                 }
 
                 $btnCheck.html(message);
+                processing = false;
             })
         })
     });
