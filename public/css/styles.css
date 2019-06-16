@@ -1,0 +1,84 @@
+body {
+    color: #333333;
+    font-family: arial;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    width: 250px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: #ffffff;
+    padding: 8px;
+    width: 268px;
+    margin-top:5px;    
+}
+
+footer {
+    color: #888888;
+    margin-top: 16px;
+    padding: 16px 0px;
+}
+
+p {
+    font-size: 10pt
+}
+
+.green {
+    color: #00AA13;
+}
+
+.yellow {
+    color: #CCAA00;
+}
+
+.red {
+    color: #B70000;
+}
+
+.black {
+    color: #000000;
+}
+
+#result {
+   margin-top: 16px; 
+}
+
+#resultGrid { width:250px}
+
+#resultGrid td:nth-child(1) {  
+    width: 40px;
+}
+
+#resultGrid td:nth-last-child(-n+2) {
+    text-align: right;
+}
+
+#resultGrid td {
+    padding: 2px;
+}
+
+#resultGrid tbody td {
+    font-size: 10pt;
+}

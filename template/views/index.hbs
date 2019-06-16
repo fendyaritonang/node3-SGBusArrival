@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BUS ARRIVAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <h1>BUS ARRIVAL</h1>
+        <p>Singapore SMRT-SBS</p>
+        <form>
+            <div><input placeholder="Enter bus stop code (e.g. 83121)" /></div>
+            <div><button id="btnCheck">Check Bus Arrival</button></div>
+            
+            <div id="result">
+                <div id="error"></div>
+                <div id="resultPanel">
+                    <table id="resultGrid">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td>Following</td>
+                                <td>Upcoming</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div><button id="btnRefresh">Refresh</button></div>
+                    <p>
+                        <span class="green">- Seats Available</span><br/>
+                        <span class="yellow">- Standing Available</span><br/>
+                        <span class="red">- Limited Standing</span>
+                    </p>
+                </div>
+            </div>
+
+        </form>
+        
+    </div>
+    <footer>
+        <p>Created by Fendy<br/>Powered by NodeJS</p>
+    </footer>
+</body>
+</html>
