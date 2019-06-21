@@ -59,7 +59,9 @@ var nextBusAttributes = (nextBus) => {
         timeArrivalEstimation,
         timeDifferenceSeconds,
         load: nextBus.Load,
-        feature: nextBus.Feature
+        feature: nextBus.Feature,
+        latitude: nextBus.Latitude,
+        longitude: nextBus.Longitude
     }
 }
 
