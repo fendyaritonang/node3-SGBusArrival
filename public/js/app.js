@@ -33,7 +33,9 @@ $(() => {
                         $.each(services, (index, {serviceNo, nextBus1, nextBus2} = {}) => {
                             var load1 = busLoadColor(nextBus1.load);
                             var load2 = busLoadColor(nextBus2.load);
-                            var markup = `<tr><td>${serviceNo}</td> <td><span class="${load1}">${nextBus1.timeArrivalEstimation}</span></td> <td><span class="${load2}">${nextBus2.timeArrivalEstimation}</span></td></tr>`;                            
+                            const location1 = openMap(nextBus1.latitude, nextBus1.longitude);
+                            const location1Markup = `<a href="${location1}" target="_blank"><span class="${load1}">${nextBus1.timeArrivalEstimation}</span></a>`;
+                            var markup = `<tr><td>${serviceNo}</td> <td>${location1Markup}</td> <td><span class="${load2}">${nextBus2.timeArrivalEstimation}</span></td></tr>`;                            
                             $resultGrid.find("tbody").append(markup);
                         });
                     }
@@ -68,4 +70,11 @@ const busLoadColor = (code) => {
             color = "black";
     }
     return color;
+}
+
+const openMap = (lat, lng) => {
+    const protocol = "https";
+    if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1) || (navigator.platform.indexOf("iPad") != -1))
+        protocol = 'maps';
+    return `${protocol}://www.google.com/maps/place/${lat},${lng}/@${lat},${lng},18z`
 }

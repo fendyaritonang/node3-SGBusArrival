@@ -1,6 +1,9 @@
+html * {
+   font-family: arial !important;
+}
+
 body {
     color: #333333;
-    font-family: arial;
     max-width: 300px;
     margin: 0 auto;
     padding: 0 16px;
@@ -12,6 +15,10 @@ body {
 
 .main-content {
     flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -70,7 +77,7 @@ p {
 #resultGrid { width:285px}
 
 #resultGrid td:nth-child(1) {  
-    width: 40px;
+    width: 50px;
 }
 
 #resultGrid td:nth-last-child(-n+2) {
@@ -83,4 +90,8 @@ p {
 
 #resultGrid tbody td {
     font-size: 14pt;
+}
+
+.smallfont {
+    font-size: 9pt;
 }
