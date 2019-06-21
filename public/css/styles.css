@@ -1,5 +1,5 @@
 html * {
-   font-family: arial !important;
+   font-family: 'segoe ui' !important;
 }
 
 body {
@@ -77,7 +77,7 @@ p {
 #resultGrid { width:285px}
 
 #resultGrid td:nth-child(1) {  
-    width: 50px;
+    width: 60px;
 }
 
 #resultGrid td:nth-last-child(-n+2) {
