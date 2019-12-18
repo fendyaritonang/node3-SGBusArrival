@@ -9,7 +9,7 @@ const arrival = (busStopCode, callback) => {
     }
 
     if (!process.env.BUSARRIVAL || process.env.BUSARRIVAL == ""){
-        callback('Key is missing')
+        callback('Something is very wrong here, please contact the developer at ompu.sunggu@outlook.com')
     } else {
         request({ url, json: true, headers }, (error, response) => {
             if (error){
