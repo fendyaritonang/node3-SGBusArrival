@@ -7,30 +7,34 @@ const arrival = (busStopCode, callback) => {
         'AccountKey': process.env.BUSARRIVAL,
         'accept': 'application/json'
     }
-    
-    request({ url, json: true, headers }, (error, response) => {
-        if (error){
-            callback('Unable to connect to bus arrival estimation service!')
-        } else if (!response.body.Services || response.body.Services.length == 0){
-            callback('Unable to find bus stop code')
-        } else {
-            var busService = []
-            const services = response.body.Services
-            for (service in services){
-                const serviceNo = services[service].ServiceNo
-                const attr1 = nextBusAttributes(services[service].NextBus)
-                const attr2 = nextBusAttributes(services[service].NextBus2)
-                const attr3 = nextBusAttributes(services[service].NextBus3)
 
-                busService.push({
-                    serviceNo,
-                    nextBus1: (attr1.timeArrivalEstimation == '-' ? attr2 : attr1),
-                    nextBus2: (attr1.timeArrivalEstimation == '-' ? attr3 : attr2)
-                })            
-            }
-            callback(undefined, busService)            
-        } 
-    })
+    if (!process.env.BUSARRIVAL || process.env.BUSARRIVAL == ""){
+        callback('Key is missing')
+    } else {
+        request({ url, json: true, headers }, (error, response) => {
+            if (error){
+                callback('Unable to connect to bus arrival estimation service!')
+            } else if (!response.body.Services || response.body.Services.length == 0){
+                callback('Unable to find bus stop code')
+            } else {
+                var busService = []
+                const services = response.body.Services
+                for (service in services){
+                    const serviceNo = services[service].ServiceNo
+                    const attr1 = nextBusAttributes(services[service].NextBus)
+                    const attr2 = nextBusAttributes(services[service].NextBus2)
+                    const attr3 = nextBusAttributes(services[service].NextBus3)
+    
+                    busService.push({
+                        serviceNo,
+                        nextBus1: (attr1.timeArrivalEstimation == '-' ? attr2 : attr1),
+                        nextBus2: (attr1.timeArrivalEstimation == '-' ? attr3 : attr2)
+                    })            
+                }
+                callback(undefined, busService)            
+            } 
+        })
+    }    
 }
 
 var nextBusAttributes = (nextBus) => {
