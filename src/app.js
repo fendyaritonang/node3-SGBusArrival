@@ -21,6 +21,10 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
+app.get('/location', (req, res) => {
+    res.render('location')
+})
+
 app.get('/arrival', (req, res) => {
     if (!req.query.buscode){
         return res.send({
